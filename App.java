@@ -120,3 +120,135 @@ public class App {
 
     }
 }
+
+
+
+//Solutions for min stack problem 
+class MinStack {
+    Stack<Integer> stack;
+    int min;
+
+    public MinStack() {
+        this.stack = new Stack<>();
+        this.min = Integer.MAX_VALUE;
+    }
+
+    public void push(int val) {
+        if (stack.isEmpty()) {
+            stack.push(val);
+            min = val;
+        } else {
+            if (val >= min) {
+                stack.push(val);
+            } else {
+                stack.push(2 * val - min);
+                min = val;
+            }
+        }
+    }
+
+    public void pop() {
+        if (stack.isEmpty()) return;
+        int top = stack.pop();
+        if (top < min) {
+            min = 2 * min - top;
+        }
+    }
+
+    public int top() {
+        int top = stack.peek();
+        if (top < min) {
+            return min;
+        } else {
+            return top;
+        }
+    }
+
+    public int getMin() {
+        return min;
+    }
+}
+
+
+// class Pair{
+//     int i;
+//     int j;
+//     Pair(int i,int j){
+//         this.i=i;
+//         this.j=j;
+//     }
+// }
+// class MinStack {
+//     Stack<Pair> stack;
+
+//     public MinStack() {
+//         this.stack=new Stack<>();
+//     }
+    
+//     public void push(int val) {
+//         if(stack.isEmpty()){
+//             Pair p=new Pair(val,val);
+//             stack.push(p);
+//         }else{
+//             Pair p=stack.peek();
+//             int newMin=Math.min(val,p.j);
+//             Pair newPair=new Pair(val,newMin);
+//             stack.push(newPair);
+//         }
+//     }
+    
+//     public void pop() {
+//         stack.pop();
+//     }
+    
+//     public int top() {
+//         Pair p=stack.peek();
+//         return p.i;
+//     }
+    
+//     public int getMin() {
+//         Pair p=stack.peek();
+//         return p.j;
+//     }
+// }
+
+
+// class MinStack {
+//     Stack<Integer> stack;
+//     Stack<Integer> minStack;
+
+//     public MinStack() {
+//         this.stack=new Stack<>();
+//         this.minStack=new Stack<>();
+//     }
+    
+//     public void push(int val) {
+//         stack.push(val);
+//         if(minStack.isEmpty()){
+//             minStack.push(val);
+//         }else{
+//             if(minStack.peek()<val){
+//                 minStack.push(minStack.peek());
+//             }else{
+//                 minStack.push(val);
+//             }
+//         }
+//     }
+    
+//     public void pop() {
+//         stack.pop();
+//         minStack.pop();
+//     }
+    
+//     public int top() {
+//         int c=stack.peek();
+//         return c;
+//     }
+    
+//     public int getMin() {
+//         int c=minStack.peek();
+//         return c;
+
+//     }
+// }
+
