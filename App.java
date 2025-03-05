@@ -281,3 +281,28 @@ public int[] productExceptSelf(int[] nums) {
 
     }
 
+
+// Valid palnidrome
+public boolean isPalindrome(String s) {
+
+        int count[]=new int[26];
+        StringBuilder sb=new StringBuilder();
+        for(char c:s.toCharArray()){
+            if(Character.isLetterOrDigit(c)){
+                sb.append(Character.toLowerCase(c));
+            }
+        }
+        String newStr=sb.toString();
+        int i=0;
+        int j=newStr.length()-1;
+        while(i<j){
+            if(newStr.charAt(i)!=newStr.charAt(j)){
+                return false;
+            }
+            i++; j--;
+        }
+
+        return true;
+
+}
+
