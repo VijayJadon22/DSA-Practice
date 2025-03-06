@@ -324,3 +324,24 @@ public boolean isPalindrome(String s) {
 
 }
 
+
+
+//container with most water
+public int maxArea(int[] height) {
+        // TC:O(n^2) and SC:O(1)
+        int max=0;
+        for(int i=0;i<height.length-1;i++){
+            for(int j=i+1;j<height.length;j++){
+                int high=Math.min(height[i],height[j]);
+                int width=j-i;
+                int cap=high*width;
+
+                if(cap>max){
+                    max=cap;
+                }
+            }
+        }
+
+        return max;
+    }
+
