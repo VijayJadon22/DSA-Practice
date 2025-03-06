@@ -365,3 +365,30 @@ public int maxArea(int[] height) {
         // return max;
     }
 
+
+
+
+///3sum problem 
+ public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> arr=new ArrayList<>();
+        Set<List<Integer>> set=new HashSet<>();
+        int n=nums.length;
+        for(int i=0;i<n-2;i++){
+            for(int j=i+1;j<n-1;j++){
+                for(int k=j+1;k<n;k++){
+                    if(nums[i]+nums[j]+nums[k]==0){
+                        List<Integer> l=new ArrayList<>();
+                        l.add(nums[i]); l.add(nums[j]); l.add(nums[k]);
+                        Collections.sort(l);
+                        set.add(l);
+                    }
+                }
+            }
+        }
+
+        for(List<Integer> m:set){
+            arr.add(m);
+        }
+        return arr;
+    }
+
