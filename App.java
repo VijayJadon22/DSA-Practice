@@ -436,3 +436,25 @@ public int maxArea(int[] height) {
         return arr;
     }
 
+
+
+
+//find Intersection of two linkedlists
+public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        
+        // // TC:- O(n+m) and SC: O(n) if n is the list 1 as we are storing all nodes of list 1
+        // ListNode slow=headA;
+        // ListNode fast=headB;
+        // Set<ListNode> set=new HashSet<>();
+
+        // while(slow!=null){
+        //     set.add(slow);
+        //     slow=slow.next;
+        // }
+        // while(fast!=null){
+        //     if(set.contains(fast)) return fast;
+        //     fast=fast.next;
+        // }
+        // return null;
+    }
+
