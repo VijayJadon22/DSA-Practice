@@ -3,19 +3,38 @@ import java.util.LinkedList;
 
 public class LinearDataStructure {
     public static void main(String[] args) {
-        
-        //Queue
+
+        // Queue
         Queue<Integer> queue = new LinkedList<>();
-        queue.offer(1);
-        queue.offer(2);
-        queue.offer(3);
-        queue.offer(4);
+        // queue.offer(1);
+        // queue.offer(2);
+        // queue.offer(3);
+        // queue.offer(4);
+        // System.out.println(queue);
+        // System.out.println(queue.poll());
+        // System.out.println(queue.poll());
+        // System.out.println(queue.poll());
+        // System.out.println(queue.poll());
+        // System.out.println(queue.poll());
+        // System.out.println(queue);
+
+        /// reversing a queue
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+        queue.add(4);
+        queue.add(5);
         System.out.println(queue);
-        System.out.println(queue.poll());
-        System.out.println(queue.poll());
-        System.out.println(queue.poll());
-        System.out.println(queue.poll());
-        System.out.println(queue.poll());
+
+        Stack<Integer> stack = new Stack<>();
+        while (!queue.isEmpty()) {
+            stack.push(queue.poll());
+        }
+
+        while (!stack.isEmpty()) {
+            queue.offer(stack.pop());
+        }
         System.out.println(queue);
+
     }
 }
