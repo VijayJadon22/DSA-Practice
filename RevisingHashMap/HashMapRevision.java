@@ -40,32 +40,41 @@ public class HashMapRevision {
 
         // int count[] = new int[26];
         // for (char ch : str.toCharArray()) {
-        //     if (!Character.isLetterOrDigit(ch))continue;
-        //     count[Character.toLowerCase(ch) - 'a']++;
+        // if (!Character.isLetterOrDigit(ch))continue;
+        // count[Character.toLowerCase(ch) - 'a']++;
         // }
 
         // for (int i = 0; i < 26; i++) {
-        //     if (count[i] == 1) {
-        //         System.out.println((char)('a'+i));
-        //     }
+        // if (count[i] == 1) {
+        // System.out.println((char)('a'+i));
+        // }
         // }
 
+        // for (char ch : str.toCharArray()) {
+        // map.put(Character.toLowerCase(ch),
+        // map.getOrDefault(Character.toLowerCase(ch), 0) + 1);
+        // }
 
+        // System.out.println(map);
+
+        // for (char ch : str.toCharArray()) {
+        // if (map.get(Character.toLowerCase(ch))==1) {
+        // System.out.println(ch);
+        // break;
+        // }
+        // }
+
+        // fir repeating character in string
         for (char ch : str.toCharArray()) {
             map.put(Character.toLowerCase(ch), map.getOrDefault(Character.toLowerCase(ch), 0) + 1);
         }
-
-        System.out.println(map);
-
         for (char ch : str.toCharArray()) {
-            if (map.get(Character.toLowerCase(ch))==1) {
+            if (map.get(Character.toLowerCase(ch)) > 1) {
                 System.out.println(ch);
                 break;
             }
         }
 
-        
-    
     }
 
 }
